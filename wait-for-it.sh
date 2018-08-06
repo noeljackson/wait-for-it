@@ -33,7 +33,7 @@ wait_for()
     while :
     do
         if [[ $ISBUSY -eq 1 ]]; then
-            nc -z $HOST $PORT
+            curl $HOST:$PORT
             result=$?
         else
             (echo > /dev/tcp/$HOST/$PORT) >/dev/null 2>&1
